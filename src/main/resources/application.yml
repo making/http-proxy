@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: downstream
+          uri: ${DOWNSTREAM_URL:https://httpbin.org}
+          predicates:
+          - Host=**
+          filters:
+          - PreserveHostHeader
+      httpclient:
+        ssl:
+          use-insecure-trust-manager: true
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: WARN
+    reactor:
+      netty:
+        http:
+          server:
+            HttpServer: ${SERVER_LOG_LEVEL:DEBUG}
+          client:
+            HttpClient: ${CLIENT_LOG_LEVEL:DEBUG}

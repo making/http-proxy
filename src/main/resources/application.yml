@@ -21,6 +21,6 @@ logging:
       netty:
         http:
           server:
-            HttpServer: ${SERVER_LOG_LEVEL:DEBUG}
+            HttpServer: ${SERVER_LOG_LEVEL:INFO}
           client:
-            HttpClient: ${CLIENT_LOG_LEVEL:DEBUG}
+            HttpClient: ${CLIENT_LOG_LEVEL:INFO}

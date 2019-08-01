@@ -1,4 +1,4 @@
-# HTTP ProxyZZ
+# HTTP Proxy
 
 ```
 ./mvnw clean package -DskipTests=true
